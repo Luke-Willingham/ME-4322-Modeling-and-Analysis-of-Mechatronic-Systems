@@ -1,0 +1,15 @@
+%solve diff eq generated using band graph teq
+clc
+clear
+
+%initial conditions
+
+x0=[80 0]; %initial condition for momentum and displacement
+
+timespan = [0 10]; %0 to 10s
+
+[t,x] = ode45(@bond_graph_Mass_Spring_Damper,timespan,x0);
+
+
+plot(t, x(:,2), 'LineWidth', 1.5)
+plot(t,x)
